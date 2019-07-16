@@ -1,9 +1,12 @@
 <?php
 
-/* @var $factory \Illuminate\Database\Eloquent\Factory */
+/* @var $factory Factory */
 
+use App\Model\Category;
 use App\Model\Question;
+use App\User;
 use Faker\Generator as Faker;
+use Illuminate\Database\Eloquent\Factory;
 use Illuminate\Support\Str;
 
 $factory->define(Question::class, function (Faker $faker) {
@@ -15,10 +18,10 @@ $factory->define(Question::class, function (Faker $faker) {
         'body' => $faker->text(500),
         // we need an existing category id
         'category_id' => function () {
-            return \App\Model\Category::all()->random();
+            return Category::all()->random();
         },
         'user_id' => function () {
-            return \App\User::all()->random();
+            return User::all()->random();
         },
     ];
 });
