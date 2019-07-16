@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5dde420b-7d76-4556-8fcf-9e5962846eeb" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Model/Like.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Model/Like.php" afterDir="false" />
@@ -44,7 +45,7 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/database/seeds/DatabaseSeeder.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
+            <state relative-caret-position="455">
               <caret line="37" column="25" selection-start-line="37" selection-start-column="25" selection-end-line="37" selection-end-column="25" />
               <folding>
                 <element signature="e#7#30#0#PHP" expanded="true" />
@@ -382,7 +383,7 @@
       <workItem from="1563185113723" duration="7804000" />
       <workItem from="1563207803554" duration="11084000" />
       <workItem from="1563283384527" duration="101000" />
-      <workItem from="1563284064981" duration="2235000" />
+      <workItem from="1563284064981" duration="2521000" />
     </task>
     <servers />
   </component>
@@ -398,7 +399,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="29134000" />
+    <option name="totallyTimeSpent" value="29420000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -411,7 +412,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="961" y="0" width="959" height="1025" extended-state="4" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" weight="0.36633664" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -780,7 +780,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/database/seeds/DatabaseSeeder.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
+        <state relative-caret-position="455">
           <caret line="37" column="25" selection-start-line="37" selection-start-column="25" selection-end-line="37" selection-end-column="25" />
           <folding>
             <element signature="e#7#30#0#PHP" expanded="true" />
