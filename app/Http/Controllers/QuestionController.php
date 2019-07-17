@@ -69,7 +69,6 @@ class QuestionController extends Controller
     public function edit(Question $question)
     {
         //
-//        throw new \BadMethodCallException('Method edit is not implemented yet');
     }
 
     /**
@@ -82,7 +81,11 @@ class QuestionController extends Controller
      */
     public function update(Request $request, Question $question)
     {
-        //
+        // todo: Преобразовать запрос чтобы сохранять нормальные данные, а то я позволяю изменить время создания и slug, ну это бред!
+
+        $question->update($request->all());
+
+        return response('Updated.', 200);
     }
 
     /**

@@ -25,4 +25,6 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 // todo: make Laravel accept questions/id and questions/slug too.
 // like resource for api/questions/by-slug/questionSlugController or QuestionController with specified GetRouteKeyName
 Route::apiResource('questions', 'QuestionController');
+Route::apiResource('categories', 'CategoryController');
+Route::apiResource('replies', 'ReplyController');
 
