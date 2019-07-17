@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-/*Routes for (data) queries*/
+/*Routes for (data) queries; By default works as host/api/<query>*/
 
 
 Route::middleware('auth:api')->get('/user', function (Request $request) {
@@ -22,4 +22,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 //apiResource automatically creates routes for all CRUD parts
-Route::apiResource('/question', 'QuestionController');
+// todo: make Laravel accept questions/id and questions/slug too.
+// like resource for api/questions/by-slug/questionSlugController or QuestionController with specified GetRouteKeyName
+Route::apiResource('questions', 'QuestionController');
+

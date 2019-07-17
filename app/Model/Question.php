@@ -14,28 +14,50 @@ class Question extends Model
      * can be used to retrieve linked records from DB.
      * */
 
+    protected $fillable = [
+        'title',
+        'slug',
+        'body',
+        'category_id',
+        'user_id',
+    ];
+
+    public function getRouteKeyName()
+    {
+        return 'id';
+    }
+
+
     /**
      * @return user that we linked (many to one)
      */
-    function user(){
+    function user()
+    {
         /*many to one or inversed one-to-one/one-to-many*/
-        return  $this->belongsTo(User::class);
+        return $this->belongsTo(User::class);
     }
 
     /**
      * @return many replies that linked us (one to many)
      */
-    function replies(){
+    function replies()
+    {
         /*one to many*/
         return $this->hasMany(Reply::class);
 
     }
 
-    function category(){
+    function category()
+    {
         /*many to one*/
         return $this->belongsTo(Category::class);
 
     }
 
+    function getPathAttribute()
+    {
+        // asset: app url + path
+        return asset("/api/question/{$this->slug}");
+    }
 
 }
