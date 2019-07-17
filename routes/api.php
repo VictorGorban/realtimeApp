@@ -22,9 +22,10 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 //apiResource automatically creates routes for all CRUD parts
-// todo: make Laravel accept questions/id and questions/slug too.
+// todo: make slug update by database, not by Laravel.
 // like resource for api/questions/by-slug/questionSlugController or QuestionController with specified GetRouteKeyName
 Route::apiResource('questions', 'QuestionController');
 Route::apiResource('categories', 'CategoryController');
-Route::apiResource('replies', 'ReplyController');
+Route::apiResource('questions/{question}/answers', 'AnswerController');
 
+//vote up/vote down for both answer and question

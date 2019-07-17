@@ -14,7 +14,7 @@ $factory->define(Question::class, function (Faker $faker) {
 
     return [
         'title' => $title,
-        'slug' => Str::slug($title),
+//        'slug' => Str::slug($title),
         'body' => $faker->text(500),
         // we need an existing category id
         'category_id' => function () {

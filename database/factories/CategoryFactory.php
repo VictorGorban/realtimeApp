@@ -11,7 +11,7 @@ $factory->define(Category::class, function (Faker $faker) {
     $name = $faker->sentence;
     return [
         'name' => $name,
-        'slug' => Str::slug($name),
+//        'slug' => Str::slug($name),
 
     ];
 });

@@ -38,7 +38,7 @@ class QuestionController extends Controller
      */
     public function store(Request $request)
     {
-        Question::create($request->all());
+//        Question::create($request->all());
 
         // or, for user that now logged in...
         auth()->user()->question()->create($request->all());
@@ -81,9 +81,8 @@ class QuestionController extends Controller
      */
     public function update(Request $request, Question $question)
     {
-        // todo: Преобразовать запрос чтобы сохранять нормальные данные, а то я позволяю изменить время создания и slug, ну это бред!
-
-        $question->update($request->all());
+        // done: Преобразовать запрос чтобы сохранять нормальные данные, а то я позволяю изменить время создания и slug, ну это бред!
+        $question->update($request->all(['title','body',]));
 
         return response('Updated.', 200);
     }

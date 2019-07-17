@@ -16,7 +16,7 @@ class Question extends Model
 
     protected $fillable = [
         'title',
-        'slug',
+//        'slug',
         'body',
         'category_id',
         'user_id',
@@ -38,12 +38,12 @@ class Question extends Model
     }
 
     /**
-     * @return many replies that linked us (one to many)
+     * @return many answers that linked us (one to many)
      */
-    function replies()
+    function answers()
     {
         /*one to many*/
-        return $this->hasMany(Reply::class);
+        return $this->hasMany(Answer::class);
 
     }
 
@@ -52,6 +52,11 @@ class Question extends Model
         /*many to one*/
         return $this->belongsTo(Category::class);
 
+    }
+
+    function votes(){
+        /*one-to-many*/
+        return $this->hasMany(QuestionVote::class);
     }
 
     function getPathAttribute()

@@ -5,7 +5,7 @@ namespace App\Model;
 use App\User;
 use Illuminate\Database\Eloquent\Model;
 
-class Reply extends Model
+class Answer extends Model
 {
     //
     function question(){
@@ -18,8 +18,17 @@ class Reply extends Model
         return $this->belongsTo(User::class);
     }
 
-    function likes(){
+    function votes(){
         /*one-to-many*/
-        return $this->hasMany(Like::class);
+        return $this->hasMany(AnswerVote::class);
     }
+
+
+    protected $fillable = [
+        'body',
+        'question_id',
+        'user_id',
+
+    ];
+
 }
