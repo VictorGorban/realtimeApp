@@ -38,7 +38,7 @@ class Question extends Model
     }
 
     /**
-     * @return many answers that linked us (one to many)
+     * @return many|\Illuminate\Database\Eloquent\Relations\HasMany
      */
     function answers()
     {
@@ -56,8 +56,11 @@ class Question extends Model
 
     function votes(){
         /*one-to-many*/
+        // баг был, т.к. first это не сортировка. Надо latest() или просто get().
         return $this->hasMany(QuestionVote::class);
     }
+
+
 
     function getPathAttribute()
     {

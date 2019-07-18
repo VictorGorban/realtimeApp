@@ -16,7 +16,7 @@ $factory->define(AnswerVote::class, function (Faker $faker) {
         'user_id' => function() {
             return User::all()->random();
         },
-        'vote_up' => rand(true, false),
+        'is_vote_up' => rand(rand(true, false), false),
 
     ];
 });

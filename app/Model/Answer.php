@@ -20,6 +20,7 @@ class Answer extends Model
 
     function votes(){
         /*one-to-many*/
+
         return $this->hasMany(AnswerVote::class);
     }
 

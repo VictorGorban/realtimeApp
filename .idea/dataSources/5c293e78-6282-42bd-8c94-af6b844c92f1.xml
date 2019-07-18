@@ -1132,440 +1132,506 @@
     <table id="285" parent="5" name="users">
       <Collation>utf8mb4_unicode_ci</Collation>
     </table>
-    <routine id="286" parent="5" name="NAME_SLUG">
+    <table id="286" parent="5" name="votes">
+      <Collation>utf8mb4_unicode_ci</Collation>
+    </table>
+    <routine id="287" parent="5" name="NAME_SLUG">
       <SourceTextLength>68</SourceTextLength>
       <Definer>admin@%</Definer>
       <RoutineKind>function</RoutineKind>
     </routine>
-    <column id="287" parent="278" name="id">
+    <column id="288" parent="278" name="id">
       <Position>1</Position>
       <DataType>int(10) unsigned|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="288" parent="278" name="answer_id">
+    <column id="289" parent="278" name="answer_id">
       <Position>2</Position>
       <DataType>int(10) unsigned|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="289" parent="278" name="user_id">
+    <column id="290" parent="278" name="user_id">
       <Position>3</Position>
       <DataType>int(10) unsigned|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="290" parent="278" name="vote_up">
+    <column id="291" parent="278" name="is_vote_up">
       <Position>4</Position>
       <DataType>tinyint(1)|0s</DataType>
       <NotNull>1</NotNull>
       <DefaultExpression>1</DefaultExpression>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="291" parent="278" name="created_at">
+    <column id="292" parent="278" name="created_at">
       <Position>5</Position>
       <DataType>timestamp|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="292" parent="278" name="updated_at">
+    <column id="293" parent="278" name="updated_at">
       <Position>6</Position>
       <DataType>timestamp|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="293" parent="278" name="answer_votes_answer_id_foreign">
+    <index id="294" parent="278" name="answer_votes_answer_id_foreign">
       <ColNames>answer_id</ColNames>
       <Type>btree</Type>
     </index>
-    <index id="294" parent="278" name="answer_votes_user_id_foreign">
+    <index id="295" parent="278" name="answer_votes_user_id_foreign">
       <ColNames>user_id</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="295" parent="278" name="PRIMARY">
+    <key id="296" parent="278" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="296" parent="278" name="answer_votes_answer_id_foreign">
+    <foreign-key id="297" parent="278" name="answer_votes_answer_id_foreign">
       <ColNames>answer_id</ColNames>
       <RefSchemaName>realtimeapp</RefSchemaName>
       <RefTableName>answers</RefTableName>
       <RefColNames>id</RefColNames>
       <OnDelete>cascade</OnDelete>
     </foreign-key>
-    <foreign-key id="297" parent="278" name="answer_votes_user_id_foreign">
+    <foreign-key id="298" parent="278" name="answer_votes_user_id_foreign">
       <ColNames>user_id</ColNames>
       <RefSchemaName>realtimeapp</RefSchemaName>
       <RefTableName>users</RefTableName>
       <RefColNames>id</RefColNames>
       <OnDelete>cascade</OnDelete>
     </foreign-key>
-    <column id="298" parent="279" name="id">
+    <column id="299" parent="279" name="id">
       <Position>1</Position>
       <DataType>int(10) unsigned|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="299" parent="279" name="body">
+    <column id="300" parent="279" name="body">
       <Position>2</Position>
       <DataType>text|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="300" parent="279" name="question_id">
+    <column id="301" parent="279" name="question_id">
       <Position>3</Position>
       <DataType>int(10) unsigned|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="301" parent="279" name="user_id">
+    <column id="302" parent="279" name="user_id">
       <Position>4</Position>
       <DataType>int(10) unsigned|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="302" parent="279" name="created_at">
+    <column id="303" parent="279" name="created_at">
       <Position>5</Position>
       <DataType>timestamp|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="303" parent="279" name="updated_at">
+    <column id="304" parent="279" name="updated_at">
       <Position>6</Position>
       <DataType>timestamp|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="304" parent="279" name="answers_question_id_foreign">
+    <index id="305" parent="279" name="answers_question_id_foreign">
       <ColNames>question_id</ColNames>
       <Type>btree</Type>
     </index>
-    <index id="305" parent="279" name="answers_user_id_foreign">
+    <index id="306" parent="279" name="answers_user_id_foreign">
       <ColNames>user_id</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="306" parent="279" name="PRIMARY">
+    <key id="307" parent="279" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="307" parent="279" name="answers_question_id_foreign">
+    <foreign-key id="308" parent="279" name="answers_question_id_foreign">
       <ColNames>question_id</ColNames>
       <RefSchemaName>realtimeapp</RefSchemaName>
       <RefTableName>questions</RefTableName>
       <RefColNames>id</RefColNames>
       <OnDelete>cascade</OnDelete>
     </foreign-key>
-    <foreign-key id="308" parent="279" name="answers_user_id_foreign">
+    <foreign-key id="309" parent="279" name="answers_user_id_foreign">
       <ColNames>user_id</ColNames>
       <RefSchemaName>realtimeapp</RefSchemaName>
       <RefTableName>users</RefTableName>
       <RefColNames>id</RefColNames>
       <OnDelete>cascade</OnDelete>
     </foreign-key>
-    <column id="309" parent="280" name="id">
+    <column id="310" parent="280" name="id">
       <Position>1</Position>
       <DataType>int(10) unsigned|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="310" parent="280" name="name">
+    <column id="311" parent="280" name="name">
       <Position>2</Position>
       <DataType>varchar(255)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="311" parent="280" name="slug">
+    <column id="312" parent="280" name="slug">
       <Position>3</Position>
       <DataType>varchar(255)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="312" parent="280" name="created_at">
+    <column id="313" parent="280" name="created_at">
       <Position>4</Position>
       <DataType>timestamp|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="313" parent="280" name="updated_at">
+    <column id="314" parent="280" name="updated_at">
       <Position>5</Position>
       <DataType>timestamp|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="314" parent="280" name="PRIMARY">
+    <key id="315" parent="280" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <trigger id="315" parent="280" name="category_slug_on_insert">
+    <trigger id="316" parent="280" name="category_slug_on_insert">
       <SourceTextLength>65</SourceTextLength>
       <Definer>admin@%</Definer>
       <Turn>before-row</Turn>
       <Events>I</Events>
     </trigger>
-    <trigger id="316" parent="280" name="category_slug_on_update">
+    <trigger id="317" parent="280" name="category_slug_on_update">
       <SourceTextLength>65</SourceTextLength>
       <Definer>admin@%</Definer>
       <Turn>before-row</Turn>
       <Events>U</Events>
     </trigger>
-    <column id="317" parent="281" name="id">
+    <column id="318" parent="281" name="id">
       <Position>1</Position>
       <DataType>int(10) unsigned|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="318" parent="281" name="migration">
+    <column id="319" parent="281" name="migration">
       <Position>2</Position>
       <DataType>varchar(255)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="319" parent="281" name="batch">
+    <column id="320" parent="281" name="batch">
       <Position>3</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="320" parent="281" name="PRIMARY">
+    <key id="321" parent="281" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="321" parent="282" name="email">
+    <column id="322" parent="282" name="email">
       <Position>1</Position>
       <DataType>varchar(255)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="322" parent="282" name="token">
+    <column id="323" parent="282" name="token">
       <Position>2</Position>
       <DataType>varchar(255)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="323" parent="282" name="created_at">
+    <column id="324" parent="282" name="created_at">
       <Position>3</Position>
       <DataType>timestamp|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="324" parent="282" name="password_resets_email_index">
+    <index id="325" parent="282" name="password_resets_email_index">
       <ColNames>email</ColNames>
       <Type>btree</Type>
     </index>
-    <column id="325" parent="283" name="id">
+    <column id="326" parent="283" name="id">
       <Position>1</Position>
       <DataType>int(10) unsigned|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="326" parent="283" name="question_id">
+    <column id="327" parent="283" name="question_id">
       <Position>2</Position>
       <DataType>int(10) unsigned|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="327" parent="283" name="user_id">
+    <column id="328" parent="283" name="user_id">
       <Position>3</Position>
       <DataType>int(10) unsigned|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="328" parent="283" name="vote_up">
+    <column id="329" parent="283" name="is_vote_up">
       <Position>4</Position>
       <DataType>tinyint(1)|0s</DataType>
       <NotNull>1</NotNull>
       <DefaultExpression>1</DefaultExpression>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="329" parent="283" name="created_at">
+    <column id="330" parent="283" name="created_at">
       <Position>5</Position>
       <DataType>timestamp|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="330" parent="283" name="updated_at">
+    <column id="331" parent="283" name="updated_at">
       <Position>6</Position>
       <DataType>timestamp|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="331" parent="283" name="question_votes_question_id_foreign">
+    <index id="332" parent="283" name="question_votes_question_id_foreign">
       <ColNames>question_id</ColNames>
       <Type>btree</Type>
     </index>
-    <index id="332" parent="283" name="question_votes_user_id_foreign">
+    <index id="333" parent="283" name="question_votes_user_id_foreign">
       <ColNames>user_id</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="333" parent="283" name="PRIMARY">
+    <key id="334" parent="283" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="334" parent="283" name="question_votes_question_id_foreign">
+    <foreign-key id="335" parent="283" name="question_votes_question_id_foreign">
       <ColNames>question_id</ColNames>
       <RefSchemaName>realtimeapp</RefSchemaName>
       <RefTableName>questions</RefTableName>
       <RefColNames>id</RefColNames>
       <OnDelete>cascade</OnDelete>
     </foreign-key>
-    <foreign-key id="335" parent="283" name="question_votes_user_id_foreign">
+    <foreign-key id="336" parent="283" name="question_votes_user_id_foreign">
       <ColNames>user_id</ColNames>
       <RefSchemaName>realtimeapp</RefSchemaName>
       <RefTableName>users</RefTableName>
       <RefColNames>id</RefColNames>
       <OnDelete>cascade</OnDelete>
     </foreign-key>
-    <column id="336" parent="284" name="id">
+    <column id="337" parent="284" name="id">
       <Position>1</Position>
       <DataType>int(10) unsigned|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="337" parent="284" name="title">
+    <column id="338" parent="284" name="title">
       <Position>2</Position>
       <DataType>varchar(255)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="338" parent="284" name="slug">
+    <column id="339" parent="284" name="slug">
       <Position>3</Position>
       <DataType>varchar(255)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="339" parent="284" name="body">
+    <column id="340" parent="284" name="body">
       <Position>4</Position>
       <DataType>text|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="340" parent="284" name="category_id">
+    <column id="341" parent="284" name="category_id">
       <Position>5</Position>
       <DataType>int(10) unsigned|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="341" parent="284" name="user_id">
+    <column id="342" parent="284" name="user_id">
       <Position>6</Position>
       <DataType>int(10) unsigned|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="342" parent="284" name="created_at">
+    <column id="343" parent="284" name="created_at">
       <Position>7</Position>
       <DataType>timestamp|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="343" parent="284" name="updated_at">
+    <column id="344" parent="284" name="updated_at">
       <Position>8</Position>
       <DataType>timestamp|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="344" parent="284" name="questions_category_id_foreign">
+    <index id="345" parent="284" name="questions_category_id_foreign">
       <ColNames>category_id</ColNames>
       <Type>btree</Type>
     </index>
-    <index id="345" parent="284" name="questions_user_id_foreign">
+    <index id="346" parent="284" name="questions_user_id_foreign">
       <ColNames>user_id</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="346" parent="284" name="PRIMARY">
+    <key id="347" parent="284" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="347" parent="284" name="questions_category_id_foreign">
+    <foreign-key id="348" parent="284" name="questions_category_id_foreign">
       <ColNames>category_id</ColNames>
       <RefSchemaName>realtimeapp</RefSchemaName>
       <RefTableName>categories</RefTableName>
       <RefColNames>id</RefColNames>
       <OnDelete>cascade</OnDelete>
     </foreign-key>
-    <foreign-key id="348" parent="284" name="questions_user_id_foreign">
+    <foreign-key id="349" parent="284" name="questions_user_id_foreign">
       <ColNames>user_id</ColNames>
       <RefSchemaName>realtimeapp</RefSchemaName>
       <RefTableName>users</RefTableName>
       <RefColNames>id</RefColNames>
       <OnDelete>cascade</OnDelete>
     </foreign-key>
-    <trigger id="349" parent="284" name="question_slug_on_insert">
+    <trigger id="350" parent="284" name="question_slug_on_insert">
       <SourceTextLength>66</SourceTextLength>
       <Definer>admin@%</Definer>
       <Turn>before-row</Turn>
       <Events>I</Events>
     </trigger>
-    <trigger id="350" parent="284" name="question_slug_on_update">
+    <trigger id="351" parent="284" name="question_slug_on_update">
       <SourceTextLength>66</SourceTextLength>
       <Definer>admin@%</Definer>
       <Turn>before-row</Turn>
       <Events>U</Events>
     </trigger>
-    <column id="351" parent="285" name="id">
+    <column id="352" parent="285" name="id">
       <Position>1</Position>
       <DataType>int(10) unsigned|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="352" parent="285" name="name">
+    <column id="353" parent="285" name="name">
       <Position>2</Position>
       <DataType>varchar(255)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="353" parent="285" name="email">
+    <column id="354" parent="285" name="email">
       <Position>3</Position>
       <DataType>varchar(255)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="354" parent="285" name="email_verified_at">
+    <column id="355" parent="285" name="email_verified_at">
       <Position>4</Position>
       <DataType>timestamp|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="355" parent="285" name="password">
+    <column id="356" parent="285" name="password">
       <Position>5</Position>
       <DataType>varchar(255)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="356" parent="285" name="remember_token">
+    <column id="357" parent="285" name="remember_token">
       <Position>6</Position>
       <DataType>varchar(100)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="357" parent="285" name="created_at">
+    <column id="358" parent="285" name="created_at">
       <Position>7</Position>
       <DataType>timestamp|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="358" parent="285" name="updated_at">
+    <column id="359" parent="285" name="updated_at">
       <Position>8</Position>
       <DataType>timestamp|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="359" parent="285" name="users_email_unique">
+    <index id="360" parent="285" name="users_email_unique">
       <ColNames>email</ColNames>
       <Unique>1</Unique>
       <Type>btree</Type>
     </index>
-    <key id="360" parent="285" name="PRIMARY">
+    <key id="361" parent="285" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <key id="361" parent="285" name="users_email_unique">
+    <key id="362" parent="285" name="users_email_unique">
       <ColNames>email</ColNames>
       <UnderlyingIndexName>users_email_unique</UnderlyingIndexName>
     </key>
-    <argument id="362" parent="286">
+    <column id="363" parent="286" name="id">
+      <Position>1</Position>
+      <DataType>int(10) unsigned|0s</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="364" parent="286" name="answer_id">
+      <Position>2</Position>
+      <DataType>int(10) unsigned|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="365" parent="286" name="user_id">
+      <Position>3</Position>
+      <DataType>int(10) unsigned|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="366" parent="286" name="is_vote_up">
+      <Position>4</Position>
+      <DataType>tinyint(1)|0s</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>1</DefaultExpression>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="367" parent="286" name="created_at">
+      <Position>5</Position>
+      <DataType>timestamp|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="368" parent="286" name="updated_at">
+      <Position>6</Position>
+      <DataType>timestamp|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <index id="369" parent="286" name="votes_answer_id_foreign">
+      <ColNames>answer_id</ColNames>
+      <Type>btree</Type>
+    </index>
+    <index id="370" parent="286" name="votes_user_id_foreign">
+      <ColNames>user_id</ColNames>
+      <Type>btree</Type>
+    </index>
+    <key id="371" parent="286" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="372" parent="286" name="votes_answer_id_foreign">
+      <ColNames>answer_id</ColNames>
+      <RefSchemaName>realtimeapp</RefSchemaName>
+      <RefTableName>answers</RefTableName>
+      <RefColNames>id</RefColNames>
+      <OnDelete>cascade</OnDelete>
+    </foreign-key>
+    <foreign-key id="373" parent="286" name="votes_user_id_foreign">
+      <ColNames>user_id</ColNames>
+      <RefSchemaName>realtimeapp</RefSchemaName>
+      <RefTableName>users</RefTableName>
+      <RefColNames>id</RefColNames>
+      <OnDelete>cascade</OnDelete>
+    </foreign-key>
+    <argument id="374" parent="287">
       <ArgumentDirection>R</ArgumentDirection>
       <DataType>varchar(255)|0s</DataType>
     </argument>
-    <argument id="363" parent="286" name="name">
+    <argument id="375" parent="287" name="name">
       <Position>1</Position>
       <DataType>varchar(255)|0s</DataType>
     </argument>

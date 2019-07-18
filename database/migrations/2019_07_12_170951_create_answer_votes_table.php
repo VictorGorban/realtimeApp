@@ -19,12 +19,13 @@ class CreateAnswerVotesTable extends Migration
             $table->increments('id');
             $table->unsignedInteger('answer_id');
             $table->unsignedInteger('user_id');
-            $table->boolean('vote_up')->default(true);
+            $table->boolean('is_vote_up')->default(true);
+            $table->timestamps();
+
 
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->foreign('answer_id')->references('id')->on('answers')
                   ->onDelete('cascade');
-            $table->timestamps();
         });
     }
 

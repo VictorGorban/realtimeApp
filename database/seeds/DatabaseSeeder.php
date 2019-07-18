@@ -5,6 +5,7 @@ use App\Model\AnswerVote;
 use App\Model\Question;
 use App\Model\Answer;
 use App\Model\QuestionVote;
+use App\Model\Vote;
 use App\User;
 use Illuminate\Database\Seeder;
 
@@ -40,6 +41,7 @@ class DatabaseSeeder extends Seeder
             );
         });
         echo "Answer votes faking finished \n";
+
 
 
     }
