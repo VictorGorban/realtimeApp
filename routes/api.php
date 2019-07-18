@@ -25,7 +25,15 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 // todo: make slug update by database, not by Laravel.
 // like resource for api/questions/by-slug/questionSlugController or QuestionController with specified GetRouteKeyName
 Route::apiResource('questions', 'QuestionController');
+Route::get('questions/{question}/votes', 'QuestionVoteController@index');
+Route::post('questions/{question}/voteup/{vote}', 'QuestionVoteController@voteup');
+Route::post('questions/{question}/votedown/{vote}', 'QuestionVoteController@votedown');
+
 Route::apiResource('categories', 'CategoryController');
+
 Route::apiResource('questions/{question}/answers', 'AnswerController');
+Route::get('answers/{answer}/votes', 'AnswerVoteController@index');
+Route::post('answers/{answer}/voteup/{vote}', 'AnswerVoteController@voteup');
+Route::post('answers/{answer}/votedown/{vote}', 'AnswerVoteController@votedown');
 
 //vote up/vote down for both answer and question
