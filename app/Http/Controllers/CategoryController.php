@@ -8,6 +8,14 @@ use Illuminate\Http\Request;
 
 class CategoryController extends Controller
 {
+
+    function __construct()
+    {
+        $this->middleware('JWT', ['only' => ['store', 'update', 'destroy']]);
+
+    }
+
+
     /**
      * Display a listing of the resource.
      *
@@ -52,7 +60,7 @@ class CategoryController extends Controller
      *
      * @param \App\Model\Category $category
      *
-     * @return \Illuminate\Http\Response
+     * @return CategoryResource|\Illuminate\Http\Response
      */
     public function show(Category $category)
     {

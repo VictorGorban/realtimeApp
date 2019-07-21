@@ -2,8 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\User;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Hash;
+use Tymon\JWTAuth\JWTAuth;
 
 class AuthController extends Controller
 {
@@ -14,7 +18,14 @@ class AuthController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth:api', ['except' => ['login']]);
+        $this->middleware('JWT', ['except' => ['login', 'signup']]);
+    }
+
+
+    public function signup(Request $request)
+    {
+        User::create($request->all());
+        return $this->login($request);
     }
 
     /**
@@ -24,11 +35,14 @@ class AuthController extends Controller
      */
     public function login()
     {
+
+//        JWTAuth::getToken()->authenticate();
+
         $credentials = request(['email', 'password']);
 
 //        return $credentials;
 
-        if (! $token = auth()->attempt($credentials)) {
+        if (!$token = auth()->attempt($credentials)) {
             return response()->json(['error' => 'Unauthorized'], 401);
         }
 
@@ -70,7 +84,7 @@ class AuthController extends Controller
     /**
      * Get the token array structure.
      *
-     * @param  string $token
+     * @param string $token
      *
      * @return \Illuminate\Http\JsonResponse
      */
@@ -79,7 +93,7 @@ class AuthController extends Controller
         return response()->json([
                                     'access_token' => $token,
                                     'token_type' => 'bearer',
-                                    'expires_in' => auth()->factory()->getTTL() * 60
+                                    'expires_in' => auth()->factory()->getTTL() * 60,
                                 ]);
     }
 

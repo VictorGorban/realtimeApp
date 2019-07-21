@@ -10,6 +10,12 @@ use Illuminate\Http\Request;
 
 class QuestionVoteController extends Controller
 {
+
+    function __construct()
+    {
+        $this->middleware('JWT', ['except' => ['index']]);
+    }
+
     /**
      * Display a listing of the resource.
      *

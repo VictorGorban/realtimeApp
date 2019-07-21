@@ -10,6 +10,14 @@ use Symfony\Component\HttpFoundation\Response;
 
 class AnswerController extends Controller
 {
+
+
+    function __construct()
+    {
+        $this->middleware('JWT', ['only' => ['store', 'update', 'destroy']]);
+
+    }
+
     /**
      * Display a listing of the resource.
      *

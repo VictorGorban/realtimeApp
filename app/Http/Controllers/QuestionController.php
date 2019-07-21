@@ -13,6 +13,12 @@ class QuestionController extends Controller
      *
      * @return \Illuminate\Http\Resources\Json\AnonymousResourceCollection|\Illuminate\Http\Response
      */
+    function __construct()
+    {
+        $this->middleware('JWT', ['only' => ['store', 'update', 'destroy']]);
+
+    }
+
     public function index()
     {
         // now each transform of question use QuestionResource
@@ -51,7 +57,7 @@ class QuestionController extends Controller
      *
      * @param \App\Model\Question $question
      *
-     * @return \Illuminate\Http\Response
+     * @return QuestionResource|\Illuminate\Http\Response
      */
     public function show(Question $question)
     {
