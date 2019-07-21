@@ -5,7 +5,6 @@ use App\Model\AnswerVote;
 use App\Model\Question;
 use App\Model\Answer;
 use App\Model\QuestionVote;
-use App\Model\Vote;
 use App\User;
 use Illuminate\Database\Seeder;
 
@@ -41,6 +40,13 @@ class DatabaseSeeder extends Seeder
             );
         });
         echo "Answer votes faking finished \n";
+
+
+//        todo: Комментарии к Q and A + votes.
+        // comment: Ну нафиг, опять себе усложяю. Задача: погрессивное улучшение - 1) научиться/пройти курс 2) Прогрессивное улучшение.
+
+//  todo: категории -> темы, т.к. я строю q&a site, а не форум. // Да ладно, не везде. Да и на SO community ~= category.
+
 
 
 

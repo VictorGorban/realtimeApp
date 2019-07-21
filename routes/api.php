@@ -35,13 +35,24 @@ Route::post('questions/{question}/voteup', 'QuestionVoteController@voteup');
 Route::post('questions/{question}/votedown', 'QuestionVoteController@votedown');
 
 
-
-
 Route::apiResource('questions/{question}/answers', 'AnswerController');
 
 Route::get('answers/{answer}/votes', 'AnswerVoteController@index');
-
 Route::post('answers/{answer}/voteup', 'AnswerVoteController@voteup');
 Route::post('answers/{answer}/votedown', 'AnswerVoteController@votedown');
 
-//vote up/vote down for both answer and question
+
+// user login
+Route::group([
+
+                 'middleware' => 'api',
+                 'prefix' => 'auth',
+
+             ], function ($router) {
+
+    Route::post('login', 'AuthController@login');
+    Route::post('logout', 'AuthController@logout');
+    Route::post('refresh', 'AuthController@refresh');
+    Route::post('me', 'AuthController@me');
+
+});
