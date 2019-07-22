@@ -1,3 +1,6 @@
+/**
+ * Class-helper for managing user login/signup part. Also represents the user.
+ */
 class AppUser {
 
 	constructor() {
@@ -13,10 +16,35 @@ class AppUser {
 				.then(res => {
 					let obj = {
 						email: credentials.email,
-						name: res.data.username,
+						username: res.data.username,
 						id: res.data.user_id,
 						jwt: res.data.access_token,
 					};
+
+					this.store(obj);
+					return true;
+				})
+				.catch(error => {
+					console.log(error);
+					return false;
+				})
+	}
+
+	signup(credentials) {
+		// credentials = {
+		// 	email: 'vg32@ya.ru',
+		// 	password: 'password',
+		// 	name: 'Victor Gorban',
+		// };
+		return axios.post('/api/auth/signup', credentials)
+				.then(res => {
+					let obj = {
+						email: credentials.email,
+						username: res.data.username,
+						id: res.data.user_id,
+						jwt: res.data.access_token,
+					};
+
 					this.store(obj);
 					return true;
 				})
@@ -41,7 +69,7 @@ class AppUser {
 	 */
 	set(data) {
 		let id = data.id;
-		if (data.user_id!==undefined){
+		if (data.user_id !== undefined) {
 			id = data.user_id;
 		}
 		this.email = data.email;
@@ -55,8 +83,16 @@ class AppUser {
 	 * @return {object}
 	 */
 	retrieve() {
-		const data = JSON.parse(localStorage.getItem(this.storageKey));
-		this.set(data);
+		let data = {};
+
+		try {
+			data = JSON.parse(localStorage.getItem(this.storageKey));
+		} catch (e) {
+			console.log(e);
+		} finally {
+			this.set(data);
+			// console.log(data)
+		}
 
 		return data;
 	}
@@ -92,7 +128,7 @@ class AppUser {
 
 
 	isLoggedIn() {
-		return this.hasToken();
+		return this.hasToken() && this.hasId();
 	}
 }
 

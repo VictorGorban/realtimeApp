@@ -15,7 +15,7 @@
         <v-btn flat>Categories</v-btn>
       </router-link>
       <router-link to="/login">
-        <v-btn flat>Login</v-btn>
+        <v-btn flat>Login/Signup</v-btn>
       </router-link>
     </div>
   </v-toolbar>

@@ -39,7 +39,7 @@ Vue.component('app-home', require('./components/AppHome').default);
 
 
 // todo: убрать или преобразовать
-console.log(User.hasId() && User.hasToken());
+console.log(User.isLoggedIn());
 
 
 const app = new Vue({
