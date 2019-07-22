@@ -71,38 +71,38 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/js/components/login/Login.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-145">
-              <caret line="34" column="42" lean-forward="true" selection-start-line="34" selection-start-column="42" selection-end-line="34" selection-end-column="42" />
+            <state relative-caret-position="-154">
+              <caret line="17" column="23" selection-start-line="17" selection-start-column="23" selection-end-line="17" selection-end-column="23" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="das://5c293e78-6282-42bd-8c94-af6b844c92f1/schema/realtimeapp/table/users">
-          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-            <state projectRestartId="1a46c7b8-63cb-49c2-af99-fb00b262d198">
-              <filtering>
-                <filter text="" />
-              </filtering>
-              <column-attributes>
-                <column name="email" position="7" />
-                <column name="email_verified_at" position="3" />
-                <column name="password" position="4" />
-                <column name="remember_token" position="5" />
-                <column name="created_at" position="6" />
-              </column-attributes>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/routes/web.php">
+        <entry file="file://$PROJECT_DIR$/resources/js/app.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="242">
-              <caret line="20" column="18" selection-start-line="20" selection-start-column="18" selection-end-line="20" selection-end-column="18" />
+            <state relative-caret-position="184">
+              <caret line="40" column="33" selection-start-line="40" selection-start-column="33" selection-end-line="40" selection-end-column="33" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/resources/js/helpers/AppUser.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="330">
+              <caret line="48" column="16" selection-start-line="48" selection-start-column="16" selection-end-line="48" selection-end-column="16" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/js/helpers/JWTToken.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="44">
+              <caret line="2" column="24" selection-start-line="2" selection-start-column="24" selection-end-line="2" selection-end-column="24" />
             </state>
           </provider>
         </entry>
@@ -127,9 +127,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>Replies</find>
-      <find>reply</find>
-      <find>like</find>
       <find>rand(true, false)</find>
       <find>vote_up</find>
       <find>is_is_vote_up</find>
@@ -157,6 +154,9 @@
       <find>JWTAuth::</find>
       <find>app/Exceptions/</find>
       <find>bar</find>
+      <find>=</find>
+      <find>datato</find>
+      <find>RESPONDWITH</find>
     </findStrings>
     <replaceStrings>
       <replace>created</replace>
@@ -179,6 +179,7 @@
       <replace>votes()-&gt;updateOrCreate</replace>
       <replace>answer</replace>
       <replace>categories</replace>
+      <replace>:</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -187,10 +188,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/Http/Resources/CategoryResource.php" />
-        <option value="/96fcd525/5c293e78-6282-42bd-8c94-af6b844c92f1/schema/realtimeapp/routine/NAME_SLUG@(varchar(255)).sql" />
-        <option value="$PROJECT_DIR$/database/migrations/2019_07_17_161336_functions.php" />
-        <option value="$PROJECT_DIR$/database/factories/QuestionVoteFactory.php" />
         <option value="$PROJECT_DIR$/app/Model/Vote.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/ReplyController.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/VoteController.php" />
@@ -218,7 +215,6 @@
         <option value="$PROJECT_DIR$/composer.json" />
         <option value="$PROJECT_DIR$/app/Http/Middleware/JWT.php" />
         <option value="$APPLICATION_CONFIG_DIR$/consoles/db/5c293e78-6282-42bd-8c94-af6b844c92f1/console.sql" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/AuthController.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/QuestionController.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/AnswerController.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/AnswerVoteController.php" />
@@ -232,12 +228,17 @@
         <option value="$PROJECT_DIR$/resources/js/components/toolbar.vue" />
         <option value="$PROJECT_DIR$/resources/js/components/Footer.vue" />
         <option value="$PROJECT_DIR$/resources/js/components/AppFooter.vue" />
-        <option value="$PROJECT_DIR$/resources/js/app.js" />
         <option value="$PROJECT_DIR$/resources/js/components/AppHome.vue" />
         <option value="$PROJECT_DIR$/resources/js/router/router.js" />
         <option value="$PROJECT_DIR$/resources/js/components/Toolbar.vue" />
         <option value="$PROJECT_DIR$/routes/web.php" />
+        <option value="$PROJECT_DIR$/resources/js/helpers/User.js" />
         <option value="$PROJECT_DIR$/resources/js/components/login/Login.vue" />
+        <option value="$PROJECT_DIR$/resources/js/helpers/AppStorage.js" />
+        <option value="$PROJECT_DIR$/resources/js/helpers/JWTToken.js" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/AuthController.php" />
+        <option value="$PROJECT_DIR$/resources/js/app.js" />
+        <option value="$PROJECT_DIR$/resources/js/helpers/AppUser.js" />
       </list>
     </option>
   </component>
@@ -332,9 +333,9 @@
     </include_path>
   </component>
   <component name="ProjectFrameBounds" extendedState="4">
-    <option name="x" value="998" />
-    <option name="width" value="922" />
-    <option name="height" value="1032" />
+    <option name="x" value="961" />
+    <option name="width" value="959" />
+    <option name="height" value="1031" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="1" id="Add" />
@@ -367,13 +368,7 @@
               <item name="realtimeApp" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
               <item name="js" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="realtimeApp" type="b2602c69:ProjectViewProjectNode" />
-              <item name="realtimeApp" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="helpers" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -463,7 +458,7 @@
       <workItem from="1563644306622" duration="27196000" />
       <workItem from="1563734240085" duration="7178000" />
       <workItem from="1563784497443" duration="3540000" />
-      <workItem from="1563788060647" duration="2550000" />
+      <workItem from="1563788060647" duration="15502000" />
     </task>
     <servers />
   </component>
@@ -479,7 +474,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="121583000" />
+    <option name="totallyTimeSpent" value="134535000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -491,10 +486,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="998" y="0" width="922" height="1032" extended-state="4" />
+    <frame x="961" y="0" width="959" height="1031" extended-state="4" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" weight="0.29472476" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.3487349" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Database Console" order="0" weight="0.32739422" />
@@ -508,15 +503,15 @@
       <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Version Control" order="10" show_stripe_button="false" sideWeight="0.49893048" weight="0.32919955" />
-      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.7128713" visible="true" weight="0.3429844" />
+      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.7128713" visible="true" weight="0.34336677" />
       <window_info anchor="bottom" id="Event Log" order="12" sideWeight="0.28712872" side_tool="true" weight="0.34198645" />
       <window_info anchor="bottom" id="PHP-CGI Server" order="13" show_stripe_button="false" sideWeight="0.49946523" weight="0.32943678" />
       <window_info anchor="bottom" id="Inspection Results" order="14" weight="0.3295711" />
-      <window_info anchor="bottom" id="TypeScript" order="15" />
+      <window_info anchor="bottom" id="TypeScript" order="15" show_stripe_button="false" weight="0.32998884" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info active="true" anchor="right" id="Database" order="3" visible="true" weight="0.4266055" />
+      <window_info anchor="right" id="Database" order="3" weight="0.40924093" />
       <window_info anchor="right" x="0" y="0" width="189" height="825" id="Documentation" order="4" side_tool="true" weight="0.32893288" />
     </layout>
     <layout-to-restore>
@@ -589,24 +584,6 @@
     </option>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/database/factories/QuestionCommentFactory.php" />
-    <entry file="file://$PROJECT_DIR$/app/Model/Answer.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="242">
-          <caret line="11" column="36" selection-start-line="11" selection-start-column="36" selection-end-line="11" selection-end-column="36" />
-          <folding>
-            <element signature="e#29#42#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.env">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="10" column="12" lean-forward="true" selection-start-line="10" selection-start-column="12" selection-end-line="10" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/database/migrations/2019_07_12_170951_create_answer_votes_table.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="330">
@@ -788,16 +765,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/AuthController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="20" selection-start-line="20" selection-end-line="21" />
-          <folding>
-            <element signature="e#40#53#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/QuestionController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="308">
@@ -883,13 +850,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/js/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="12" column="22" selection-start-line="12" selection-start-column="22" selection-end-line="12" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/home.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="484">
@@ -921,17 +881,22 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/routes/web.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="242">
-          <caret line="20" column="18" selection-start-line="20" selection-start-column="18" selection-end-line="20" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/js/components/Toolbar.vue">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="220">
           <caret line="10" column="22" selection-start-line="10" selection-start-column="22" selection-end-line="10" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/axios/index.d.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2904" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/web.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="242">
+          <caret line="20" column="18" selection-start-line="20" selection-start-column="18" selection-end-line="20" selection-end-column="18" />
         </state>
       </provider>
     </entry>
@@ -951,15 +916,48 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/axios/index.d.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2904" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/js/components/login/Login.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-145">
-          <caret line="34" column="42" lean-forward="true" selection-start-line="34" selection-start-column="42" selection-end-line="34" selection-end-column="42" />
+        <state relative-caret-position="-154">
+          <caret line="17" column="23" selection-start-line="17" selection-start-column="23" selection-end-line="17" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/js/helpers/AppStorage.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="22">
+          <caret line="1" column="2" selection-start-line="1" selection-start-column="2" selection-end-line="1" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/js/helpers/JWTToken.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="44">
+          <caret line="2" column="24" selection-start-line="2" selection-start-column="24" selection-end-line="2" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/AuthController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="339">
+          <caret line="98" column="42" selection-start-line="98" selection-start-column="42" selection-end-line="98" selection-end-column="42" />
+          <folding>
+            <element signature="e#40#53#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/js/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="184">
+          <caret line="40" column="33" selection-start-line="40" selection-start-column="33" selection-end-line="40" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/js/helpers/AppUser.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="48" column="16" selection-start-line="48" selection-start-column="16" selection-end-line="48" selection-end-column="16" />
         </state>
       </provider>
     </entry>

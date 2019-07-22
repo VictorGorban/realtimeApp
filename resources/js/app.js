@@ -4,6 +4,7 @@
  * building robust, powerful web applications using Vue and Laravel.
  */
 
+
 require('./bootstrap');
 
 window.Vue = require('vue');
@@ -11,6 +12,8 @@ window.Vue = require('vue');
 import Vue from 'vue'
 import Vuetify from 'vuetify'
 import router from './router/router'
+import User from './helpers/AppUser';
+window.User = User;
 
 
 Vue.use(Vuetify);
@@ -33,6 +36,11 @@ Vue.component('app-home', require('./components/AppHome').default);
  * the page. Then, you may begin adding components to this application
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
+
+
+// todo: убрать или преобразовать
+console.log(User.hasId() && User.hasToken());
+
 
 const app = new Vue({
 	router,

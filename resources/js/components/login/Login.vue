@@ -32,8 +32,7 @@
 
 <script>
 
-	import {AxiosInstance as axios} from "axios";
-
+ 
 	export default {
 		data() {
 			return {
@@ -44,10 +43,14 @@
 			}
 		},
     methods:{
-			login(){
-				axios.post('/api/auth/login', this.form)
-            .then(res=> {console.log(res.data); localStorage.setItem('jwt', res.data.access_token)})
-            .catch(error=> console.log(error.response.data))
+			async login(){
+				if (! await User.login(this.form)){
+					alert('cannot login, you failed.')
+        }
+				else{
+					console.log(User.retrieve());
+					console.log('You successfully logged in');
+        }
       }
     }
 
