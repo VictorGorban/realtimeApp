@@ -37,8 +37,10 @@
 
 <script>
 
+	import router from "../../router/router";
 
 	export default {
+		router,
 		data() {
 			return {
 				form: {
@@ -62,6 +64,7 @@
 				else{
 					// console.log(User.retrieve());
 					console.log('You successfully logged in');
+					router.push('questions');
 				}
 			},
 

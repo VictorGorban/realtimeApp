@@ -8,7 +8,7 @@
       <router-link to="/questions">
         <v-btn flat>Questions</v-btn>
       </router-link>
-      <router-link to="/ask">
+      <router-link to="/askQuestion">
         <v-btn flat>Ask</v-btn>
       </router-link>
       <router-link to="/categories">

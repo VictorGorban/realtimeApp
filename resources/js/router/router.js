@@ -2,17 +2,22 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Login from '../components/login/Login'
 import Signup from '../components/login/Signup'
+import Questions from '../components/questions/Questions'
+import SingleQuestion from '../components/questions/SingleQuestion'
+import AskQuestion from '../components/questions/AskQuestion'
+import Categories from '../components/categories/Categories'
 
 Vue.use(VueRouter);
 
 
 const routes = [
-	{ path: '/login', component: Login },
-	{ path: '/signup', component: Signup },
-	// { path: '/questions', component: Questions },
-	// { path: '/askQuestion', component: AskQuestion },
+	{ path: '/login', name:'login', component: Login },
+	{ path: '/signup', name:'signup', component: Signup },
+	{ path: '/questions', name:'questions', component: Questions },
+	{ path: '/askQuestion', name:'askQuestion', component: AskQuestion },
+	{ path: '/singleQuestion', name:'singleQuestion', component: SingleQuestion },
+	{ path: '/categories', name:'categories', component: Categories },
 	// { path: '/categories', component: Categories },
-	// { path: '/bar', component: Bar }
 ];
 
 // 3. Create the router instance and pass the `routes` option
