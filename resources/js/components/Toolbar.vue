@@ -3,12 +3,21 @@
     <v-toolbar-title>Realtime</v-toolbar-title>
     <v-spacer></v-spacer>
     
-    <v-toolbar-items>
-      <v-btn flat>Questions</v-btn>
-      <v-btn flat>Ask</v-btn>
-      <v-btn flat>Categories</v-btn>
-      <v-btn flat>Login</v-btn>
-    </v-toolbar-items>
+    <div>
+    
+      <router-link to="/questions">
+        <v-btn flat>Questions</v-btn>
+      </router-link>
+      <router-link to="/ask">
+        <v-btn flat>Ask</v-btn>
+      </router-link>
+      <router-link to="/categories">
+        <v-btn flat>Categories</v-btn>
+      </router-link>
+      <router-link to="/login">
+        <v-btn flat>Login</v-btn>
+      </router-link>
+    </div>
   </v-toolbar>
 </template>
 
