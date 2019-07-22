@@ -4,7 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Model\Answer;
 use App\Model\AnswerVote;
+use Illuminate\Contracts\Routing\ResponseFactory;
+use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
 
 class AnswerVoteController extends Controller
 {
@@ -18,7 +21,7 @@ class AnswerVoteController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Database\Eloquent\Collection|\Illuminate\Http\Response
+     * @return Collection|Response
      */
     public function index(Answer $answer)
     {
@@ -29,7 +32,7 @@ class AnswerVoteController extends Controller
      * @param Answer  $answer
      * @param Request $request
      *
-     * @return \Illuminate\Contracts\Routing\ResponseFactory|\Illuminate\Http\Response
+     * @return ResponseFactory|Response
      */
     public function voteup(Answer $answer)
     {
@@ -45,7 +48,7 @@ class AnswerVoteController extends Controller
     /**
      * @param Answer $answer
      *
-     * @return \Illuminate\Contracts\Routing\ResponseFactory|\Illuminate\Http\Response
+     * @return ResponseFactory|Response
      */
     public function votedown(Answer $answer)
     {

@@ -25,6 +25,9 @@
   },
   "dependencies": {
     "babel-polyfill": "^6.26.0",
+    "browser-sync-webpack-plugin": "^2.2.2",
+    "global": "^4.4.0",
+    "vue-router": "^3.0.7",
     "vuetify": "^1.5.16"
   }
 }

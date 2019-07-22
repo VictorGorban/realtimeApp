@@ -6,6 +6,7 @@ use App\Http\Resources\AnswerResource;
 use App\Model\Question;
 use App\Model\Answer;
 use Illuminate\Http\Request;
+use Illuminate\Http\Resources\Json\AnonymousResourceCollection;
 use Symfony\Component\HttpFoundation\Response;
 
 class AnswerController extends Controller
@@ -21,7 +22,7 @@ class AnswerController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Resources\Json\AnonymousResourceCollection
+     * @return AnonymousResourceCollection
      */
     public function index(Question $question)
     {
@@ -42,7 +43,7 @@ class AnswerController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param \Illuminate\Http\Request $request
+     * @param Request $request
      *
      * @return \Illuminate\Http\Response
      */
@@ -55,7 +56,7 @@ class AnswerController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param \App\Model\Answer $answer
+     * @param Answer $answer
      *
      * @return AnswerResource
      */
@@ -75,7 +76,7 @@ class AnswerController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param \App\Model\Answer $answer
+     * @param Answer $answer
      *
      * @return \Illuminate\Http\Response
      */
@@ -87,8 +88,8 @@ class AnswerController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param \Illuminate\Http\Request $request
-     * @param \App\Model\Answer        $answer
+     * @param Request $request
+     * @param Answer  $answer
      *
      * @return \Illuminate\Http\Response
      */
@@ -109,7 +110,7 @@ class AnswerController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param \App\Model\Answer $answer
+     * @param Answer $answer
      *
      * @return \Illuminate\Http\Response
      */

@@ -6,7 +6,9 @@ use App\Model\Answer;
 use App\Model\Question;
 use App\Model\QuestionVote;
 use Illuminate\Contracts\Routing\ResponseFactory;
+use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
 
 class QuestionVoteController extends Controller
 {
@@ -19,7 +21,7 @@ class QuestionVoteController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Database\Eloquent\Collection|\Illuminate\Http\Response
+     * @return Collection|Response
      */
     public function index(Question $question)
     {
@@ -30,7 +32,7 @@ class QuestionVoteController extends Controller
     /**
      * @param Question $question
      *
-     * @return ResponseFactory|\Illuminate\Http\Response
+     * @return ResponseFactory|Response
      */
     public function voteup(Question $question)
     {
@@ -46,7 +48,7 @@ class QuestionVoteController extends Controller
     /**
      * @param Question $question
      *
-     * @return ResponseFactory|\Illuminate\Http\Response
+     * @return ResponseFactory|Response
      */
     public function votedown(Question $question)
     {
