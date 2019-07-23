@@ -5,10 +5,12 @@ class AppUser {
 
 	constructor() {
 		this.storageKey = 'appUser';
-		this.email = null;
-		this.id = null;
-		this.name = null;
-		this.jwt = null;
+	}
+
+	logout(){
+		console.log('in user.logout')
+
+		this.clear();
 	}
 
 	login(credentials) {
@@ -29,6 +31,8 @@ class AppUser {
 					return false;
 				})
 	}
+
+
 
 	signup(credentials) {
 		// credentials = {
@@ -60,27 +64,11 @@ class AppUser {
 	 */
 	store(dataToStore) {
 		localStorage.setItem(this.storageKey, JSON.stringify(dataToStore));
-		this.set(dataToStore);
 	}
 
 	/**
-	 * set data of this user
-	 * @param data {object} of {email, name, user_id, jwt}
-	 */
-	set(data) {
-		let id = data.id;
-		if (data.user_id !== undefined) {
-			id = data.user_id;
-		}
-		this.email = data.email;
-		this.name = data.name;
-		this.id = id;
-		this.jwt = data.jwt;
-	}
-
-	/**
-	 * retrieves user data from localStorage.
-	 * @return {object}
+	 * retrieves user data from localStorage. if none stored, returns null
+	 * @return {object}|{null}
 	 */
 	retrieve() {
 		let data = {};
@@ -90,7 +78,6 @@ class AppUser {
 		} catch (e) {
 			console.log(e);
 		} finally {
-			this.set(data);
 			// console.log(data)
 		}
 
@@ -102,33 +89,36 @@ class AppUser {
 	 */
 	clear() {
 		localStorage.removeItem(this.storageKey);
-		this.set({});
 	}
 
 	/**
-	 * @return bool
+	 * @return boolean
 	 */
 	hasId() {
-		this.retrieve();
-		let id = this.id;
-		return !!id;
+		let data = this.retrieve();
+		return data === null ? false : data.hasOwnProperty('id');
 // if id then return true
 	}
 
 	/**
-	 * @return bool
+	 * @return boolean
 	 */
 
 	hasToken() {
-		this.retrieve();
-		let token = this.jwt;
-		return !!token;
+		let data = this.retrieve();
+		return data === null ? false : data.hasOwnProperty('jwt');
 // if token then return true
 	}
 
 
 	isLoggedIn() {
-		return this.hasToken() && this.hasId();
+		// console.log('in user.isLoggedIn')
+		// try {
+			return this.hasToken() && this.hasId();
+		// }
+		// catch (e) {
+		// 	console.log(e);
+		// }
 	}
 }
 

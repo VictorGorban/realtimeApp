@@ -2,7 +2,7 @@
   <div>
     <v-form @submit.prevent="login">
       <v-container>
-  
+        
         <span class="red--text" v-if="errors.email">{{errors.email.message}}</span>
         <v-text-field
                 label="E-mail*"
@@ -10,7 +10,7 @@
                 v-model="form.email"
         >
         </v-text-field>
-  
+        
         <span class="red--text" v-if="errors.password">{{errors.password.message}}</span>
         <v-text-field
                 label="Password*"
@@ -52,19 +52,29 @@
 
 			}
 		},
-		methods:{
-			async login(){
+		/**
+		 * hook to call before the component is created.
+		 * Note: hook, NOT a method.
+		 * */
+		created() {
+			if (User.isLoggedIn()) {
+				router.push('questions');
+			}
+		},
+		methods: {
+			async login() {
 				if (!this.validateForm()) {
 					return false;
 				}
 
-				if (! await User.login(this.form)){
+				if (!await User.login(this.form)) {
 					console.log('cannot login, you failed.')
-				}
-				else{
+				} else {
 					// console.log(User.retrieve());
 					console.log('You successfully logged in');
-					router.push('questions');
+					// router.push('questions');
+					window.location = '/questions'
+
 				}
 			},
 
@@ -97,7 +107,9 @@
 			validateEmail(email) {
 				let re = /.@./;
 				return re.test(email);
-			}
+			},
+
+
 		}
 
 	}

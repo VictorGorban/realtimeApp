@@ -2,6 +2,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Login from '../components/login/Login'
 import Signup from '../components/login/Signup'
+import Logout from '../components/login/Logout'
 import Questions from '../components/questions/Questions'
 import SingleQuestion from '../components/questions/SingleQuestion'
 import AskQuestion from '../components/questions/AskQuestion'
@@ -13,6 +14,7 @@ Vue.use(VueRouter);
 const routes = [
 	{ path: '/login', name:'login', component: Login },
 	{ path: '/signup', name:'signup', component: Signup },
+	{ path: '/logout', name:'logout', component: Logout },
 	{ path: '/questions', name:'questions', component: Questions },
 	{ path: '/askQuestion', name:'askQuestion', component: AskQuestion },
 	{ path: '/singleQuestion', name:'singleQuestion', component: SingleQuestion },

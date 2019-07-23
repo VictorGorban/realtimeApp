@@ -76,6 +76,13 @@
 				errors: {},
 			}
 		},
+
+		created(){
+			if (User.isLoggedIn()){
+				router.push('/questions');
+			}
+		},
+  
 		methods: {
 			async signup() {
 				if (!this.validateForm()) {
@@ -87,7 +94,8 @@
 				} else {
 					// console.log(User.retrieve());
 					console.log('You successfully logged in');
-					router.push('questions');
+					// router.push('questions');
+					window.location = '/questions'
 
 				}
 			},
@@ -126,6 +134,11 @@
 				return is_ok;
 			},
 
+			/**
+       * checks if the given email is valid
+			 * @param {string} email email to check
+			 * @return {boolean}
+			 */
 			validateEmail(email) {
 				let re = /.@./;
 				return re.test(email);
