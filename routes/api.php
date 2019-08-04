@@ -1,6 +1,5 @@
 <?php
 
-use App\Model\Category;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -23,23 +22,17 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 
-Route::apiResource('categories', 'CategoryController');
-Route::get('/categories/{category}/questions', function (Category $category) {
-    return $category->questions()->get(); // ага, latest() это сортировка
-});
+Route::apiResource('questions', 'api\QuestionController');
+Route::get('questions/{question}/votes', 'api\QuestionVoteController@index');
+Route::post('questions/{question}/voteup', 'api\QuestionVoteController@voteup');
+Route::post('questions/{question}/votedown', 'api\QuestionVoteController@votedown');
 
 
-Route::apiResource('questions', 'QuestionController');
-Route::get('questions/{question}/votes', 'QuestionVoteController@index');
-Route::post('questions/{question}/voteup', 'QuestionVoteController@voteup');
-Route::post('questions/{question}/votedown', 'QuestionVoteController@votedown');
+Route::apiResource('questions/{question}/answers', 'api\AnswerController');
 
-
-Route::apiResource('questions/{question}/answers', 'AnswerController');
-
-Route::get('answers/{answer}/votes', 'AnswerVoteController@index');
-Route::post('answers/{answer}/voteup', 'AnswerVoteController@voteup');
-Route::post('answers/{answer}/votedown', 'AnswerVoteController@votedown');
+Route::get('answers/{answer}/votes', 'api\AnswerVoteController@index');
+Route::post('answers/{answer}/voteup', 'api\AnswerVoteController@voteup');
+Route::post('answers/{answer}/votedown', 'api\AnswerVoteController@votedown');
 
 
 // user login
@@ -50,12 +43,12 @@ Route::group([
 
              ], function ($router) {
 
-    Route::post('login', 'AuthController@login');
-    Route::post('logout', 'AuthController@logout');
-    Route::post('refresh', 'AuthController@refresh');
-    Route::post('me', 'AuthController@me');
+    Route::post('login', 'api\AuthController@login');
+    Route::post('logout', 'api\AuthController@logout');
+    Route::post('refresh', 'api\AuthController@refresh');
+    Route::post('me', 'api\AuthController@me');
 
-    Route::post('signup', 'AuthController@signup');
+    Route::post('signup', 'api\AuthController@signup');
 
 
 });

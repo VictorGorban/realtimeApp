@@ -79758,7 +79758,8 @@ window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.
 
 
 window.User = _helpers_AppUser__WEBPACK_IMPORTED_MODULE_3__["default"];
-vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vuetify__WEBPACK_IMPORTED_MODULE_1___default.a);
+vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vuetify__WEBPACK_IMPORTED_MODULE_1___default.a); // Vue.use(User);
+
 /**
  * The following block of code may be used to automatically register your
  * Vue components. It will recursively scan this directory for the Vue
@@ -79780,6 +79781,7 @@ vue__WEBPACK_IMPORTED_MODULE_0___default.a.component('app-home', __webpack_requi
 console.log(_helpers_AppUser__WEBPACK_IMPORTED_MODULE_3__["default"].isLoggedIn());
 var app = new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
   router: _router_router__WEBPACK_IMPORTED_MODULE_2__["default"],
+  User: _helpers_AppUser__WEBPACK_IMPORTED_MODULE_3__["default"],
   data: function data() {
     return {};
   }

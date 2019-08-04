@@ -17,5 +17,6 @@
 //    return view('home');
 //});
 
-Route::view('/', 'home');
+// todo: view???
+Route::get('/', 'QuestionController@index');
 Route::view('/{any}', 'home');

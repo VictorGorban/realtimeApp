@@ -1,6 +1,5 @@
 <?php
 
-use App\Model\Category;
 use App\Model\AnswerVote;
 use App\Model\Question;
 use App\Model\Answer;
@@ -19,8 +18,6 @@ class DatabaseSeeder extends Seeder
     {
         factory(User::class, 10)->create();
         echo "Users faking finished \n";
-        factory(Category::class, 5)->create();
-        echo "Categories faking finished \n";
 
         factory(Question::class, 50)->create();
         echo "Questions faking finished \n";
@@ -40,15 +37,6 @@ class DatabaseSeeder extends Seeder
             );
         });
         echo "Answer votes faking finished \n";
-
-
-//        todo: Комментарии к Q and A + votes.
-        // comment: Ну нафиг, опять себе усложяю. Задача: погрессивное улучшение - 1) научиться/пройти курс 2) Прогрессивное улучшение.
-
-//  todo: категории -> темы, т.к. я строю q&a site, а не форум. // Да ладно, не везде. Да и на SO community ~= category.
-
-
-
 
     }
 }

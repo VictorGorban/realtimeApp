@@ -2,35 +2,27 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Resources\QuestionResource;
+use View;
 use App\Model\Question;
 use Illuminate\Http\Request;
-use Illuminate\Http\Resources\Json\AnonymousResourceCollection;
-use Illuminate\Http\Response;
 
 class QuestionController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
-     * @return AnonymousResourceCollection|Response
+     * @return \Illuminate\Http\Response
      */
-    function __construct()
-    {
-        $this->middleware('JWT', ['only' => ['store', 'update', 'destroy']]);
-
-    }
-
     public function index()
     {
-        // now each transform of question use QuestionResource
-        return QuestionResource::collection(Question::latest()->get());
+        $qs = Question::paginate(15);
+        return View::make('question.index')->with('questions', $qs);
     }
 
     /**
      * Show the form for creating a new resource.
      *
-     * @return Response
+     * @return \Illuminate\Http\Response
      */
     public function create()
     {
@@ -40,41 +32,32 @@ class QuestionController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param Request $request
-     *
-     * @return Response
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
     {
-//        Question::create($request->all());
-
-        // or, for user that now logged in...
-        auth()->user()->question()->create($request->all());
-
-        return response('Stored.', 200);
+        //
     }
 
     /**
      * Display the specified resource.
      *
-     * @param Question $question
-     *
-     * @return QuestionResource|Response
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
      */
-    public function show(Question $question)
+    public function show($id)
     {
-//        return $question;
-        return new QuestionResource($question);
+        //
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param Question $question
-     *
-     * @return Response
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
      */
-    public function edit(Question $question)
+    public function edit($id)
     {
         //
     }
@@ -82,29 +65,13 @@ class QuestionController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param Request  $request
-     * @param Question $question
-     *
-     * @return Response
+     * @param  \Illuminate\Http\Request  $request
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Question $question)
+    public function update(Request $request, $id)
     {
-        // done: Преобразовать запрос чтобы сохранять нормальные данные, а то я позволяю изменить время создания и slug, ну это бред!
-        $question->update($request->all(['title','body',]));
-
-        return response('Updated.', 200);
+        //
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param Question $question
-     *
-     * @return Response
-     */
-    public function destroy(Question $question)
-    {
-        $question->delete();
-        return response('Deleted');
-    }
 }

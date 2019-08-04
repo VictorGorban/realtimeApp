@@ -2,7 +2,6 @@
 
 /* @var $factory Factory */
 
-use App\Model\Category;
 use App\Model\Question;
 use App\User;
 use Faker\Generator as Faker;
@@ -16,10 +15,7 @@ $factory->define(Question::class, function (Faker $faker) {
         'title' => $title,
 //        'slug' => Str::slug($title),
         'body' => $faker->text(500),
-        // we need an existing category id
-        'category_id' => function () {
-            return Category::all()->random();
-        },
+        // we need an existing Thread id
         'user_id' => function () {
             return User::all()->random();
         },

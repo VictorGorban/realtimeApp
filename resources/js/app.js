@@ -17,6 +17,7 @@ window.User = User;
 
 
 Vue.use(Vuetify);
+// Vue.use(User);
 
 /**
  * The following block of code may be used to automatically register your
@@ -44,6 +45,7 @@ console.log(User.isLoggedIn());
 
 const app = new Vue({
 	router,
+	User,
 	data () {
 		return {
 

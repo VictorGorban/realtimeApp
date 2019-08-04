@@ -20,7 +20,6 @@ class Question extends Model
         'title',
 //        'slug',
         'body',
-        'category_id',
         'user_id',
     ];
 
@@ -46,13 +45,6 @@ class Question extends Model
     {
         /*one to many*/
         return $this->hasMany(Answer::class);
-
-    }
-
-    function category()
-    {
-        /*many to one*/
-        return $this->belongsTo(Category::class);
 
     }
 

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\api;
 
 use App\Http\Resources\AnswerResource;
 use App\Model\Question;
@@ -11,7 +11,6 @@ use Symfony\Component\HttpFoundation\Response;
 
 class AnswerController extends Controller
 {
-
 
     function __construct()
     {
